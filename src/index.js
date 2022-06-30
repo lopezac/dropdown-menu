@@ -1,3 +1,3 @@
 import "modern-normalize";
-
-console.log("test");
+import "./dropDownMenu.js";
+import "./imageSlider.js";

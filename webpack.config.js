@@ -3,6 +3,10 @@ const path = require("path");
 module.exports = {
   entry: {
     index: "./src/index.js",
+    dropStyle: "./src/ddm-style.css",
+    dropDownMenu: "./src/dropDownMenu.js",
+    imgSliderStyle: "./src/imgslider-style.css",
+    imgSlider: "./src/imageSlider.js",
   },
   mode: "development",
   devtool: "inline-source-map",
@@ -18,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|jpeg|gif|svg)$/i,
-        use: "asset/resource",
+        type: "asset/resource",
       },
     ],
   },

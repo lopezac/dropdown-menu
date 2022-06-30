@@ -5,11 +5,13 @@ const imgSlider = () => {
   const images = document.querySelectorAll(".slider > .images > .img");
   const arrowBtns = document.querySelectorAll(".slider > .arrow-btns > div");
   const dotBtnsDiv = document.querySelector(".slider > .dot-btns");
+  const rightArrow = document.querySelector(".arrow-right");
 
   const start = () => {
     listenArrows();
     createDotBtns();
     listenDotBtns();
+    setTimeout(slideImg.bind(this, rightArrow), 5000);
   };
 
   const createDotBtns = () => {
@@ -62,7 +64,7 @@ const imgSlider = () => {
   };
 
   const slideImg = (e) => {
-    const arrow = e.target;
+    const arrow = e.target ? e.target : e;
     const visibleImg = findVisibleImg();
     toggleVisible(visibleImg);
     const newVisibleImg = findNextImg(arrow, visibleImg);
@@ -73,6 +75,7 @@ const imgSlider = () => {
     const imageIdx = getImageIdx(newVisibleImg);
     const dotBtn = getDotBtns()[imageIdx];
     dotBtn.classList.toggle("checked");
+    setTimeout(slideImg.bind(this, rightArrow), 5000);
   };
 
   const getImageIdx = (toFindImg) => {

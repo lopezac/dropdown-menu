@@ -15,7 +15,7 @@ body {
 .slider > .images > .img {
   min-width: 0px;
   height: 0px;
-  transition: min-width 1s;
+  transition: min-width ease-in-out 1s;
 }
 
 .slider > .images > .visible {
